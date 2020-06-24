@@ -1,2 +1,2 @@
 # JavaNotes
-Important knowledge and personal thinking.
+Personal Excerise.
