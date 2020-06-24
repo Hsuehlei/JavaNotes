@@ -1,2 +1,2 @@
 # JavaNotes
-Personal Excerise.
+Personal Exercise.
