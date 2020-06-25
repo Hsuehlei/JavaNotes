@@ -10,10 +10,10 @@ public class Distance {
         int minute = 60;
         int hour = 24;
         int year = 365;
-        long v = 299792458;
+        long speed = 299792458;
 
         //如果year不是long类型，下面表达式等号右边乘出的结果一定是int，然后造成数据溢出
-        long distance = (second * minute * hour * year * v)/1000L;
+        long distance = (second * minute * hour * year * speed)/1000L;
         System.out.println("一光年的距离是" + distance + "千米");
     }
 }
