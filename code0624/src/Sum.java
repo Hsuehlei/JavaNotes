@@ -7,11 +7,11 @@
  */
 public class Sum {
     public static void main(String[] args) {
-        int a = 999;
+        int a = 133;
 
         int first = a / 100;
-        int second = (a - first * 100) / 10;
-        int third = a - first * 100 - second * 10;
+        int second = a / 10 % 10;
+        int third = a % 10;
         int sum = first + second + third;
         System.out.println("三位数各个位数的和为" + sum);
     }
