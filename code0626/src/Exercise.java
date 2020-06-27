@@ -295,7 +295,7 @@ public class Exercise {
      * 熟练创建方法以及调用方法
      */
     public static void demo7() {
-        System.out.println("能运行应该就是熟练创建方法及调用了吧");
+        System.out.println("不知道这样算不算...");
     }
 
     /**
