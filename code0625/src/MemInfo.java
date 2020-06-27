@@ -12,10 +12,15 @@ public class MemInfo {
     }
     
     /**
-     *  需求说明：录入会员信息（会员号、会员生日、会员积分）并显示录入信息
-     *           升级功能：判断录入是否合法（会员号必为4位整数），
-     *                    录入合法，显示录入的信息；
-     *                    不合法，显示“录入失败”
+     * 需求说明：录入会员信息（会员号、会员生日、会员积分）并显示录入信息
+     *          升级功能：判断录入是否合法（会员号必为4位整数），
+     *                   录入合法，显示录入的信息；
+     *                   不合法，显示“录入失败”
+     * 商场实行新的抽奖规则：会员号的百位数字等于产生的随机数字即为幸运会员。实现：
+     *                   1、从键盘接收4位数会员号
+     *                   2、生成随机数 int random = (int) (Math.random() * 10);
+     *                   3、算出会员号中在百位的数字号码 int baiwei = custNo / 100 % 10;
+     *                   4、使用if-else实现幸运抽奖
      */
     public static void test() {
         Scanner sc = new Scanner(System.in);
@@ -25,7 +30,7 @@ public class MemInfo {
         if ((vipNum / 1000 > 0) && (vipNum / 1000 < 10)) {
             System.out.println("会员号为：" + vipNum);
         } else {
-            System.out.println("不合法，重新输入");
+            System.out.println("不合法，录入失败，请重新输入");
             //跳出方法体
             return;
         }
