@@ -21,6 +21,6 @@ public class TwoNum {
         } else {
             System.out.println(b);
         }
-
+        sc.close();
     }
 }
