@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class Guess {
     public static void main(String[] args) {
 
+        //do...while循环或许更切题
         while (true) {
 
             Scanner sc = new Scanner(System.in);
@@ -39,13 +40,12 @@ public class Guess {
             System.out.println("请问是否要继续出拳？");
             String x = sc.next();
 
-            if (x.equals("y")) {
+            //equalsIgnoreCase不区分大小写
+            if ("y".equalsIgnoreCase(x)) {
                 continue;
             } else {
                 break;
             }
-
         }
-
     }
 }
