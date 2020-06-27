@@ -32,8 +32,8 @@ public class Birthday {
 
             System.out.println("是否继续？");
             String x = sc.next();
-            if (x.equals("y")) {
-                continue;
+            if ("y".equals(x)) {
+                
             } else {
                 break;
             }
