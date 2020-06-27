@@ -9,7 +9,7 @@ import java.util.Random;
  *              如果产生的是1就输出“生成了一只黑猪，我喜欢”
  *              如果产生的是2就输出“生成了一只红猪，有下酒菜了”
  */
-public class randomPig {
+public class RandomPig {
     public static void main(String[] args) {
 
         Random r = new Random();
