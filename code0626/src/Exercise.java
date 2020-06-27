@@ -35,12 +35,9 @@ public class Exercise {
         }
 
         int max = judegsScores[0];
-        for (int x : judegsScores) {
-            max = max > x ? max : x;
-        }
-
         int min = judegsScores[0];
         for (int x : judegsScores) {
+            max = max > x ? max : x;
             min = min < x ? min : x;
         }
 
