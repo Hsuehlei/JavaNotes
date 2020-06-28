@@ -28,6 +28,7 @@ public class Exercise {
      */
     public static void demo() {
         Scanner sc = new Scanner(System.in);
+        
         int[] judegsScores = new int[10];
         for (int i = 0; i < 10; i++) {
             System.out.println("请输入第" + (i + 1) + "个评委的评分：");
@@ -81,17 +82,11 @@ public class Exercise {
         }
 
         int maxScore = stuScore[0];
-        for (int x : stuScore) {
-            maxScore = maxScore > x ? maxScore : x;
-        }
-
         int minScore = stuScore[0];
-        for (int x : stuScore) {
-            minScore = minScore < x ? minScore : x;
-        }
-
         double sumScore = 0;
         for (int x : stuScore) {
+            maxScore = maxScore > x ? maxScore : x;
+            minScore = minScore < x ? minScore : x;
             sumScore += x;
         }
 
@@ -141,13 +136,24 @@ public class Exercise {
         System.out.println(Arrays.toString(oldArr));
         int len = oldArr.length;
         int temp;
+        boolea flag = false;
+        
         for (int i = 0; i < len - 1; i++) {
             for (int j = 0; j < len - 1 - i; j++) {
                 if (oldArr[j] > oldArr[j + 1]) {
+                    flag = ture;
                     temp = oldArr[j + 1];
                     oldArr[j + 1] = oldArr[j];
                     oldArr[j] = temp;
                 }
+            }
+            
+            //在一趟排序中，一次交换都没有发生
+            if (!flag) {
+                break;
+            } else {
+                //重置flag，进行下次判断
+                flag = false;
             }
         }
         System.out.println(Arrays.toString(oldArr));
@@ -179,67 +185,46 @@ public class Exercise {
      */
     public static void demo5() {
         int[] array = {2, 432, 5221, 235, 2, 5352, 1, 53, 5, 3, 5364, 2, 2, 63, 3533, 2, 53, 532, 532};
-
-        //求所有元素和
-        int sum = 0;
-        for (int x : array) {
-            sum += x;
-        }
-        System.out.println("所有元素的和为" + sum);
-
-        //输出所有奇数下标元素
-        //将奇数位置元素存到B数组中
-        int[] arrayB;
-        int oddSubscriptSum = 0;
-        int bSubscript = 0;
-        System.out.println("所有奇数下标如下：");
         for (int i = 0; i < array.length; i++) {
             if (i % 2 != 0) {
-                System.out.print(array[i] + "\t");
-                oddSubscriptSum++;
-                arrayB = new int[oddSubscriptSum];
-                arrayB[bSubscript] = array[i];
-                System.out.print(arrayB[bSubscript] + "\t");
+                System.out.print(array[i] + " ");
             }
         }
-
-        //输出所有元素中值为奇数的
         System.out.println();
-        System.out.println("所有元素中值为奇数的如下：");
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 != 0) {
-                System.out.print("a[" + i + "]" + "=" + array[i] + "\t");
-            }
+        for (int i = 1; i < array.length; i += 2) {
+            System.out.print(array[i] + " ");
         }
 
-        //将所有元素乘二
-        System.out.println();
+        for (int i : array) {
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println(Arrays.toString(array));
         for (int i = 0; i < array.length; i++) {
-            array[i] *= 2;
+            array[i] = array[i] * 2;
         }
         System.out.println(Arrays.toString(array));
 
-        //将所有元素加到第一个元素中
-        for (int i = 1; i < array.length; i++) {
-            array[0] += array[i];
+        //偶数数组长度
+        int evenLength = (array.length + 1) / 2;
+        int oddLength = array.length - evenLength;
+        int[] evenArry = new int[evenLength];
+        int[] oddArry = new int[oddLength];
+        int evenIndex = 0;
+        int oddIndex = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 == 0) {
+                evenArry[evenIndex] = array[i];
+                evenIndex++;
+            } else {
+                oddArry[oddIndex] = array[i];
+                oddIndex++;
+            }
         }
         System.out.println(Arrays.toString(array));
-
-        //偶数元素存到C数组中
-        int evenNumSum = 0;
-        for (int x : array) {
-            if (x % 2 == 0) {
-                evenNumSum++;
-            }
-        }
-
-        int[] arrayC = new int[evenNumSum];
-        int x = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
-                arrayC[x] = array[i];
-            }
-        }
+        System.out.println("奇数下表数组：" + Arrays.toString(oddArry));
+        System.out.println("偶数下标数组：" + Arrays.toString(evenArry));
 
         //分别逆序输出B数组和C数组
 
@@ -260,47 +245,43 @@ public class Exercise {
 
         System.out.println(Arrays.toString(arr));
 
-        int maxNum = arr[0];
-        int maxNumSubscript = 0;
-        int[] temp = new int[1];
-        for (int i = 0; i < arr.length; i++) {
-            if (maxNum < arr[i]) {
-                maxNum = arr[i];
-                maxNumSubscript = i;
+        int maxIndex = 0;
+        int minIndex = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > arr[maxIndex]) {
+                maxIndex = i;
+            }
+            if (arr[i] < arr[minIndex]) {
+                minIndex = i;
             }
         }
-        temp[0] = arr[0];
-        arr[0] = arr[maxNumSubscript];
-        arr[maxNumSubscript] = temp[0];
 
-        int minNum = arr[0];
-        int minNumSubscript = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (minNum > arr[i]) {
-                minNum = arr[i];
-                minNumSubscript = i;
-            }
+        System.out.println("最小值所在的索引是：" + minIndex);
+        System.out.println("最大值所在的索引是：" + maxIndex);
+        
+        //特殊情况第一个是最小值，最后一个是最大值，故需要判断
+        if (0 != maxIndex) {
+            int temp;
+            temp = arr[0];
+            arr[0] = arr[maxIndex];
+            arr[maxIndex] = temp;
         }
-        temp[0] = arr[9];
-        arr[9] = arr[minNumSubscript];
-        arr[minNumSubscript] = temp[0];
 
-        System.out.println(Arrays.toString(arr));
+        if ((arr.length - 1) != minIndex) {
+            int temp1 = arr[arr.length - 1];
+            arr[arr.length - 1] = arr[minIndex];
+            arr[minIndex] = temp1;
+            System.out.println(Arrays.toString(arr));
+        }
     }
 
     /**
      * 熟练创建方法以及调用方法
      */
-    public static void demo7() {
-        System.out.println("不知道这样算不算...");
-    }
+
 
     /**
      * 熟练使用方法形式参数以及返回值的问题
      */
-    public static void demo8(int x) {
-        for (int i = 0; i < x; i++) {
-            System.out.println("I potato you.");
-        }
-    }
+
 }
