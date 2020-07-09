@@ -9,7 +9,7 @@ public class Task8 {
 
     public static void main(String[] args) {
 
-        String orginal = new String("hanbasdnbafllgnbahjnbakqqqqlnbaxi");
+        String orginal = "hanbasdnbafllgnbahjnbakqqqqlnbaxi";
 
         int i = 0;
         boolean flag = true;
@@ -24,5 +24,12 @@ public class Task8 {
             }
         }
         System.out.println(i);
+
+
+
+        //改进版
+        String a = "hanbasdnbafllgnbahjnbakqqqqlnbaxi";
+        String nba = a.replaceAll("nba", "");
+        System.out.println((a.length() - nba.length())/3);
     }
 }
