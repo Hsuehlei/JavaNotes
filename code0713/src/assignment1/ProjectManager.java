@@ -7,33 +7,21 @@ package assignment1;
  */
 public class ProjectManager extends Employee {
 
-    private char gender;
+    private Double allowance;
 
-    public ProjectManager() {
+    public ProjectManager(Integer id, String name, Double salary, Double allowance) {
+        super(id, name, salary);
+        this.allowance = allowance;
     }
 
-    public ProjectManager(String name, int age, char gender) {
-        super(name, age);
-        this.gender = gender;
-    }
-
-    @Override
-    public void show() {
-        System.out.println("ProjectManager");
-    }
-
-    public char getGender() {
-        return gender;
-    }
-
-    public void setGender(char gender) {
-        this.gender = gender;
+    public Double getAllowance() {
+        return allowance;
     }
 
     @Override
-    public String toString() {
-        return  "gender=" + gender +
-                ", name='" + name + '\'' +
-                ", age=" + age;
+    public String show() {
+        return super.show() + ",allowance=" + allowance;
     }
+
+
 }

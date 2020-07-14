@@ -7,33 +7,16 @@ package assignment1;
  */
 public class SoftwareEngineer extends Employee {
 
-    private int id;
+    private Integer hot;
 
-    public SoftwareEngineer() {
+    public SoftwareEngineer(Integer id, String name, Double salary, Integer hot) {
+        super(id, name, salary);
+        this.hot = hot;
     }
 
-    public SoftwareEngineer(String name, int age, int id) {
-        super(name, age);
-        this.id = id;
-    }
 
     @Override
-    public void show() {
-        System.out.println("Programmer");
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return  "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age;
+    public String show() {
+        return super.show() + ",hot=" + hot;
     }
 }

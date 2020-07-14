@@ -7,35 +7,40 @@ package assignment1;
  */
 public abstract class Employee {
 
+    public Integer id;
     public String name;
-    public int age;
+    public Double salary;
+
 
     /**
      * show方法
      */
-    public abstract void show();
-
-    public Employee() {
+    public String show() {
+        return "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary;
     }
 
-    public Employee(String name, int age) {
+    public Employee(Integer id, String name, Double salary) {
+        this.id = id;
         this.name = name;
-        this.age = age;
+        this.salary = salary;
+    }
+
+    /**
+     * set方法等用到的时候再添加
+     *
+     * @return
+     */
+    public Integer getId() {
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public Double getSalary() {
+        return salary;
     }
 }
