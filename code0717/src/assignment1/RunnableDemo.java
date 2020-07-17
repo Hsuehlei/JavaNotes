@@ -6,6 +6,7 @@ package assignment1;
  * @date 2020/7/17 20:39
  */
 public class RunnableDemo implements Runnable {
+    
     @Override
     public void run() {
         for (int i = 0; i < 5; i++) {
@@ -15,6 +16,9 @@ public class RunnableDemo implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            
         }
+        
     }
+    
 }
