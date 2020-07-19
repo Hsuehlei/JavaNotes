@@ -43,4 +43,5 @@ public abstract class Employee {
     public Double getSalary() {
         return salary;
     }
+    
 }
