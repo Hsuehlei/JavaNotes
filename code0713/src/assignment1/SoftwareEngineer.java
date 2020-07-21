@@ -19,4 +19,5 @@ public class SoftwareEngineer extends Employee {
     public String show() {
         return super.show() + ",hot=" + hot;
     }
+    
 }
