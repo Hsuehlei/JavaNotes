@@ -50,9 +50,7 @@ public class SocketDemo {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
-        
     }
 
     @Test
