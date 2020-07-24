@@ -50,7 +50,7 @@ public class SocketDemo {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+            
         }
         
     }
@@ -98,9 +98,9 @@ public class SocketDemo {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+            
         }
-
+        
     }
-
+    
 }
