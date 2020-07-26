@@ -114,14 +114,14 @@ SELECT cno,MAX(score),MIN(score) FROM t_sc GROUP BY cno;
 -- 12. 查询不同老师所教不同课程平均分从高到低显示。
 SELECT AVG(score) avgscore FROM t_sc GROUP BY cno ORDER BY avgscore DESC;
 
--- 13. 查询统计各科成绩，各分数段人数：课程ID，课程名称，【100-85】，【85-70】，
--- 【70-60】，【<60】
+-- 13. 查询统计各科成绩，各分数段人数：课程ID，课程名称，【100-85】，【85-70】，【70-60】，【<60】
 SELECT cno,cname,COUNT(1) FROM t_course cou LEFT JOIN (
 	(SELECT cno,COUNT(1) FROM t_sc WHERE score BETWEEN 85 AND 100 GROUP BY cno) a,
 	(SELECT cno,COUNT(1) FROM t_sc WHERE score BETWEEN 70 AND 85 GROUP BY cno) b,
 	(SELECT cno,COUNT(1) FROM t_sc WHERE score BETWEEN 60 AND 70 GROUP BY cno) c,
 	(SELECT cno,COUNT(1) FROM t_sc WHERE score < 60 GROUP BY cno) d
 ) ON cou.cno=aa.cno
+
 -- 14. 查询每门课程被选修的学生数量。
 SELECT cno,COUNT(cno) FROM t_sc GROUP BY cno;
 
@@ -172,7 +172,7 @@ SELECT sno,sname FROM t_student WHERE sno IN (
 
 -- 25. 查询选修了课程的学生人数。
 SELECT DISTINCT COUNT(1) FROM t_sc GROUP BY sno HAVING COUNT(cno) >0;
---------
+---改日再更改
 
 -- 26. 查询选修了“冯老师”所授课程的学生中，成绩最高的学生姓名及其成绩。
 SELECT stu.sname,MAX(score) FROM t_student stu,t_sc sc WHERE stu.sno=sc.sno AND stu.sno IN (
@@ -189,7 +189,7 @@ LEFT JOIN t_course cour on sc.cno=cour.cno
 LEFT JOIN t_teacher tech on cour.tno=tech.tno 
 GROUP BY tech.tname
 HAVING tech.tname='冯老师' AND score=MAX(sc.score)
------------------------------------------ 
+-------------------没做出来---------------------- 
 
 -- 27. 查询各个课程及相应的选修人数
 SELECT cname,COUNT(sno) FROM t_sc sc,t_course cou GROUP BY sc.cno=cou.cno;
@@ -197,7 +197,7 @@ SELECT cname,COUNT(sno) FROM t_sc sc,t_course cou GROUP BY sc.cno=cou.cno;
 -- 28.查询每门课程的学生选修人数（超过10人的课程才统计）。要求输出课程号和选修人数，
 -- 查询结果按人数降序排列，查询结果按人数降序排列，若人数相同，按课程号升序排列
 SELECT DISTINCT sno FROM t_sc GROUP BY cno HAVING COUNT(sno)>2 ORDER BY cno
- -- -- -- -- -- -- 
+ -- -- -- 这个也好难 -- -- -- 
  
 -- 29. 查询至少选修两门课程的学生学号。
 SELECT sno FROM t_sc GROUP BY sno HAVING COUNT(cno)>2;
