@@ -93,7 +93,5 @@ public class LandLordV2 {
         System.out.println("王祖贤：" + play2);
         System.out.println("我：" + play3);
         System.out.println("底牌：" + hoCard);
-
-
     }
 }
