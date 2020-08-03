@@ -182,6 +182,7 @@ public class CashierBuyManagementFunc {
                 if (i == 1) {
                     int x = buyManagementService.vipCardPayment(userId);
                     if (x == 1) {
+                        buyManagementService.emptyShoppingCart();
                         System.out.println("> 支付成功");
                         System.out.println("> 1秒后返回");
                         Thread.sleep(1000);
