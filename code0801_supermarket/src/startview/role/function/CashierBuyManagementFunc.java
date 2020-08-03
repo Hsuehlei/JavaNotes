@@ -151,8 +151,6 @@ public class CashierBuyManagementFunc {
             } else if ("1".equals(choice)) {
                 //刷卡支付
                 cardPayment(sc);
-                buyManagementService.emptyShoppingCart();
-                backToBuyManagementMenu(sc);
             } else if ("2".equals(choice)) {
                 //返回
                 backToBuyManagementMenu(sc);
