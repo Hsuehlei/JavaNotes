@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+
+<style>
+    .left {
+        text-align: right;
+    }
+
+    table {
+        border: 2px solid #cccccc;
+        margin: auto;
+    }
+
+    .header {
+        margin: auto;
+        background-color: gray;
+        border: 2px solid #cccccc;
+        width: 390px;
+        height: auto;
+    }
+</style>
+
+<body>
+<div class="header">
+    <span style="font-size: 20px">
+        <b style="color: brown">填写注册资料</b>
+        <b>（以下**为必填项）</b>
+    </span>
+</div>
+<div>
+    <form action="">
+        <table>
+            <tr>
+                <td class="left">姓名：</td>
+                <td>
+                    <label for="">
+                        <input type="text" placeholder="请输入用户名">**
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="left">密码：</td>
+                <td>
+                    <label for="">
+                        <input type="password" placeholder="请输入密码">**
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="left">确认密码：</td>
+                <td>
+                    <label>
+                        <input type="password" placeholder="请确认密码">**
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="left">密码提示问题：</td>
+                <td>
+                    <label for="question">
+                        <select name="" id="question">
+                            <option value="">请选择一个问题</option>
+                            <option value="">请选择两个问题</option>
+                            <option value="">请选择三个问题</option>
+                        </select>**
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="left">密码提示答案：</td>
+                <td>
+                    <label>
+                        <input type="text">**
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="left">性别：</td>
+                <td>
+                    <label>
+                        <input type="radio" name="sex" checked="checked">
+                    </label>男
+                    <label>
+                        <input type="radio" name="sex">
+                    </label>女&nbsp;**
+                </td>
+            </tr>
+            <tr>
+                <td class="left">生日：</td>
+                <td><label>
+                    <input type="date">**
+                </label></td>
+            </tr>
+            <tr>
+                <td class="left">地区：</td>
+                <td>
+                    <label for="area"></label><select name="" id="area">
+                    <option value="" selected>河南</option>
+                    <option value="">河北</option>
+                    <option value="">湖南</option>
+                </select>
+                    省/直辖市
+                    <label for="city">
+                        <select name="" id="city">
+                            <option value="" selected>郑州</option>
+                            <option value="">驻马店</option>
+                            <option value="">荥阳</option>
+                        </select>
+                    </label>
+                    市&nbsp;**
+                </td>
+            </tr>
+            <tr>
+                <td class="left">爱好：</td>
+                <td>
+                    <label>
+                        <input type="checkbox" name="hobby">上网
+                    </label>
+                    <label>
+                        <input type="checkbox" name="hobby">体育
+                    </label>
+                    <label>
+                        <input type="checkbox" name="hobby">学习
+                    </label>&nbsp;**
+                </td>
+            </tr>
+            <tr>
+                <td class="left">个人简介：</td>
+                <td>
+                    <label for="">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="个人介绍"></textarea>
+                    </label>**
+                </td>
+            </tr>
+            <tr>
+                <td class="left">图像域按钮：</td>
+                <td>
+                    <button><img src="./baidulogo.png" width="72" alt="搜索"></button>
+                </td>
+            </tr>
+            <tr>
+                <td class="left">上传文件：</td>
+                <td><input type="file" value="浏览...">**</td>
+            </tr>
+            <tr>
+                <td class="left" colspan="2" style="text-align: center">
+                    <input type="submit" value="注册">&nbsp;&nbsp;<input type="submit" value="提交">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<br>
+<div style="margin: auto;width: 500px;text-align: center">
+    <audio src="./周笔畅-最美的期待.mp3" controls></audio>
+</div>
+
+<br>
+<div style="margin: auto;width: 500px">
+    <video src="./Hero.mp4" width="500px" controls></video>
+</div>
+
+</body>
+</html>
