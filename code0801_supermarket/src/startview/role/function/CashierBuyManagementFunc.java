@@ -151,8 +151,6 @@ public class CashierBuyManagementFunc {
             } else if ("1".equals(choice)) {
                 //刷卡支付
                 cardPayment(sc);
-                buyManagementService.emptyShoppingCart();
-                backToBuyManagementMenu(sc);
             } else if ("2".equals(choice)) {
                 //返回
                 backToBuyManagementMenu(sc);
@@ -184,6 +182,7 @@ public class CashierBuyManagementFunc {
                 if (i == 1) {
                     int x = buyManagementService.vipCardPayment(userId);
                     if (x == 1) {
+                        buyManagementService.emptyShoppingCart();
                         System.out.println("> 支付成功");
                         System.out.println("> 1秒后返回");
                         Thread.sleep(1000);

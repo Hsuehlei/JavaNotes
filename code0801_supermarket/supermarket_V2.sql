@@ -59,8 +59,6 @@ AND goodsid = buyid
 GROUP BY goodsid 
 ORDER BY SUM(buycount) DESC LIMIT 0,10
 
-
-
 -- 
 SELECT t1.goodsid,t1.goodsname,sum(t2.buycount) 
 FROM t_goods_info t1,t_order_detail t2,t_order_info t3 
